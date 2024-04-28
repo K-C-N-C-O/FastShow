@@ -1,0 +1,36 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>cn.kcnco.FastShow</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>FastShow</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="1169528061@qq.com" url="https://github.com/K-C-N-C-O">KCNCO</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    Select Fast Show in the Settings Tools to display the required configuration file or product requirements on the right side of the screen<br>
+    <em>Application scenario: If you need to develop a requirement document or configuration document, the document is displayed on the right of the screen, eliminating the need to cut the screen</em>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <!-- 配置 File -> Settings -> Tools -->
+        <projectConfigurable groupId="tools" displayName="Fast Show" id="test.id"
+                             instance="cn.kcnco.guide.idea.plugin.factory.SettingFactory"/>
+        <!-- 窗体 (IDEA 界面右侧) -->
+        <toolWindow id="Fast-Show" secondary="false" anchor="right" icon="/icons/logo.png"
+                    factoryClass="cn.kcnco.guide.idea.plugin.factory.ReadFactory"/>
+    </extensions>
+</idea-plugin>
